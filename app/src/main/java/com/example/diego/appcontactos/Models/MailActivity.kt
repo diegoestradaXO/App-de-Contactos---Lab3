@@ -24,15 +24,15 @@ class MailActivity : AppCompatActivity() {
 
     }
     private fun sendEmail(recipient: String, subject: String, message: String){
-        val mIntent = Intent(Intent.ACTION_SEND)
+        val mIntent = Intent(Intent.ACTION_SEND)//Intent para mandar mail
         mIntent.data = Uri.parse("mailto:")
         mIntent.type = "text/plain"
-        mIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf(recipient))
-        mIntent.putExtra(Intent.EXTRA_SUBJECT, subject)
-        mIntent.putExtra(Intent.EXTRA_TEXT, message)
+        mIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf(recipient))//Toma el recipient y lo manda como Extra en el Intent
+        mIntent.putExtra(Intent.EXTRA_SUBJECT, subject)//Toma el asunto y lo manda al Intent como Extra
+        mIntent.putExtra(Intent.EXTRA_TEXT, message)//Toma el mensaje
 
         try {
-            startActivity(Intent.createChooser(mIntent, "Choose email client..."))
+            startActivity(Intent.createChooser(mIntent, "Choose email client..."))//lanza la actividad
 
         }
         catch (e: Exception){
