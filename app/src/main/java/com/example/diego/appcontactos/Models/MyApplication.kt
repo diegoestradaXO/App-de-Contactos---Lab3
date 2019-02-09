@@ -6,5 +6,6 @@ class MyApplication: Application() {
     companion object {
         //Lista de contactos
         var contacts: ArrayList<Contact> = ArrayList()
+
     }
 }
